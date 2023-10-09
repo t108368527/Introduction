@@ -25,7 +25,7 @@ export default {
   methods: {
     scrollTo(this: any, section: string) {
       let ele = document.getElementById(section)
-      ele.scrollIntoView({ behavior: 'smooth' });
+      ele?.scrollIntoView({ behavior: 'smooth' });
     }
   }
 }
