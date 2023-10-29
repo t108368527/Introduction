@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="language">
-      <img src="@/assets/internet.png" width="30">
+      <!-- <img src="@/assets/internet.png" width="30"> -->
     </div>
   </div>
 </template>
