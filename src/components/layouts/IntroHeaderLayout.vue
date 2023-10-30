@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="title" @click="$router.push('/')">
-      <span>//</span> <img src="@/assets/logo.png" width="60" /> <span>$$</span>
+     <img src="@/assets/logo.png" width="80" />
     </div>
     <a-button type="normal" class="btn-download">Download CV</a-button>
   </div>
@@ -28,7 +28,7 @@ export default {
   align-items: center;
   flex-direction: row;
   width: 100%;
-  height: 80px;
+  height: 100%;
   padding: $padding * 3;
   color: $info;
 

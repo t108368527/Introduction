@@ -3,8 +3,8 @@
   <div class="content">
     <swiper :navigation="true" :modules="modules" class="mySwiper">
       <swiper-slide><IntroAboutItem></IntroAboutItem></swiper-slide>
-      <swiper-slide>Slide 2</swiper-slide>
-      <swiper-slide>Slide 4</swiper-slide>
+      <swiper-slide><IntroDegreeItem></IntroDegreeItem></swiper-slide>
+      <swiper-slide><IntroWorkItem></IntroWorkItem></swiper-slide>
     </swiper>
   </div>
 </template>
@@ -20,9 +20,11 @@ import { Navigation } from 'swiper/modules'
 import IntroHeaderLayout from '@/components/layouts/IntroHeaderLayout.vue'
 // views
 import IntroAboutItem from '@/components/IntroAboutItem.vue'
+import IntroDegreeItem from '@/components/IntroDegreeItem.vue'
+import IntroWorkItem from '@/components/IntroWorkItem.vue'
 
 export default {
-  components: { Swiper, SwiperSlide, IntroHeaderLayout, IntroAboutItem },
+  components: { Swiper, SwiperSlide, IntroHeaderLayout, IntroAboutItem, IntroDegreeItem, IntroWorkItem },
   setup() {
     const onSwiper = (swiper: any) => {
       console.log(swiper)
@@ -34,13 +36,15 @@ export default {
       onSwiper,
       onSlideChange,
       IntroAboutItem,
+      IntroDegreeItem,
+      IntroWorkItem,
       modules: [Navigation]
     }
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .content {
   margin: $margin * 5 $margin * 3;
 }

@@ -7,7 +7,8 @@
       <a-col class="content" :span="12">
         <h3>{{ name }}</h3>
         <div><strong>Frontend Developer</strong></div>
-        <div><strong>Sign:</strong> Archer</div>
+        <div><strong>{{ thisYear - begainYear }} years of experience</strong></div>
+        <div><strong>Contact Me : you2623t@gmail.com</strong></div>
       </a-col>
     </a-row>
   </div>
@@ -18,10 +19,14 @@ import { ref } from 'vue'
 export default {
   setup() {
     const title = ref('About')
-    const name = ref('{{Philip Chinag}}')
+    const name = ref('{{ Philip Chinag }}')
+    const begainYear = ref(2019)
+    const thisYear = ref(new Date().getFullYear())
     return {
       name,
-      title
+      title,
+      begainYear,
+      thisYear
     }
   }
 }
@@ -29,6 +34,7 @@ export default {
 
 <style lang="scss" scoped>
 .about {
+  padding: $padding * 10 0;
   background-color: $back;
   width: 100%;
   height: 100%;
@@ -36,7 +42,7 @@ export default {
   transition: all 0.3s linear;
 
   .title {
-    margin-left: $margin * 2;
+    padding-left: $margin * 8 !important;
     color: $info;
     font-size: 120px;
     font-family: 'rubik';
@@ -47,6 +53,7 @@ export default {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    height: 250px;
     color: $info;
     font-size: $describe-size;
     line-height: 1.5;
