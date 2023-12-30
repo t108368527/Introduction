@@ -7,6 +7,7 @@
       <swiper-slide><IntroWorkItem></IntroWorkItem></swiper-slide>
     </swiper>
   </div>
+  <div class="footer">© 2023 All rights reserved</div>
 </template>
 
 <script lang="ts">
@@ -46,6 +47,10 @@ export default {
 
 <style lang="scss" scoped>
 .content {
-  margin: $margin * 5 $margin * 3;
+  margin: 0 $margin * 3 $margin * 5 $margin * 3;
+}
+
+.footer {
+  text-align: center;
 }
 </style>

@@ -56,7 +56,7 @@ export default {
     height: 250px;
     color: $info;
     font-size: $describe-size;
-    line-height: 1.5;
+    line-height: 2;
     transition: all 0.3s linear;
   }
 }

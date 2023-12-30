@@ -3,7 +3,7 @@
     <div class="title" @click="$router.push('/')">
      <img src="@/assets/logo.png" width="80" />
     </div>
-    <a-button type="normal" class="btn-download">Download CV</a-button>
+    <a-button type="normal" class="btn-download" href=" /Introduction/src/assets/Philip_Chiang_2023CV.pdf" target="_blank">Download CV</a-button>
   </div>
 </template>
 
@@ -13,9 +13,31 @@ import { ref } from 'vue'
 export default {
   setup() {
     const name = ref('{{ Pony }}')
+
+    const downloadCV = async () => {
+      // 创建一个简单的 PDF 数据（用于演示）
+      const pdfPath = '../../assets/Philip_Chiang_2023CV.pdf';
+
+      // 使用 fetch 获取文件内容
+      const response = await fetch(pdfPath);
+      const pdfData = await response.blob();
+
+      // 创建下载链接
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(pdfData);
+      link.download = 'AA.pdf';
+
+      // 将链接添加到页面并模拟点击
+      document.body.appendChild(link);
+      link.click();
+
+      // 清理链接
+      document.body.removeChild(link);
+    }
     return {
       name,
-      navList: ['About', 'Degree', 'Work']
+      navList: ['About', 'Degree', 'Work'],
+      downloadCV
     }
   }
 }
